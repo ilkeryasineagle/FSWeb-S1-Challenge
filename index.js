@@ -147,16 +147,36 @@ const fenomenler = [
 Aşağıdakileri konsolda gösterim (console.log) işlemi gerçekleştirerek, yukarıda verilen fenomenler dizisindeki verilere erişim alıştırması yapın:
 
 (işlev yazmanıza gerek yok) */
+console.log(fenomenler); //Tüm diziyi gösterir.
+console.log(fenomenler[0]); //0 elemanını gösterir takipçi sayısı 539446645
+console.log(fenomenler[5]); // Barack Obama'yı göstermesi lazım
+console.log(fenomenler[1, 2]); // burada yapmak istediğim 1 ve 2 elemanını birlikte göstermesi,
+// ama önceden denemelerimde bu gerçekleşmedi. Sonuncuyu (2) gösterdi, bu da öyle olacaktır. Hatalı olacağını bilerek yazdım.
+
 
 //(1) Dizideki ilk fenomen (0. dizin) profil (profile) adı
-
+console.log(fenomenler[0].profile);
 
 //(2) Dizideki üçüncü fenomenin (2. dizin) takipçi (followers) sayısı
-
+console.log(fenomenler[2].followers); // sonucun 364542529 olması lazım amin.
 
 /* Görev 2 (otomatik kontrol testi yapılmayacak):
 (işlev yazmanıza gerek yok)
 Fenomenler dizisinde bir yazım hatası var 😱 7. sıradaki fenomen 'Justin Bieber' ın soyismi 'Biber' olarak yanlış yazılmış. Bu sorunu düzeltin ve çalışmanızı kontrol etmek için console.log() yapın.
+*/
+for (let i=0;i<fenomenler.length;i++){
+  if(fenomenler[i].profile==="Justin Biber"){
+    fenomenler[i].profile="Justin Bieber"
+  
+    console.log(fenomenler[i].profile);
+  }
+}
+//====> Burada yapmak istediğim; for döngüsü oluşturmak. İçerisinde bir i değişkeniyle bir seri devam ettirmek. Seri 0'dan başlasın.
+//====> i<fenomenler.lenggth; i++ dememin sebebi tüm fenomenleri taraması.
+//====> bir şart koştum ( if ), taranan fenomen sayısında justin BİBER'i görürsen { bu yazıyı Justin Bieber yap}
+//===> Bu değişim gerçekleştikten sonra "console.log" ile "tayin ettiğim i değişkenine takılan justin kardeşimizin adını göster bakıyım" dedim.
+//===> ctrl+s yapmıyorum çalışmazsa javaScript bozuk. çok iddialıyım :D
+//===> senol günes hosgeldi.
 
 
 /*  Görev 3:
@@ -168,7 +188,8 @@ Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
-function indekseGoreFenomen(/*kod*/) {
+function indekseGoreFenomen(satırdan
+  ) {
   /*kod*/
 }
 
