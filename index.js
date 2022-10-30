@@ -188,10 +188,11 @@ Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
-function indekseGoreFenomen(satırdan
-  ) {
-  /*kod*/
+function indekseGoreFenomen(feNomen , indeks) {
+  let donüs = `${indeks}. indekste bulunan fenomen: ${feNomen[indeks].profile}` ;
+  return donüs; 
 }
+console.log(indekseGoreFenomen(fenomenler, 3)) ;
 
 
 
@@ -203,10 +204,20 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
 
-function profilListesi(/*kod*/) {
-  /*kod*/
+function profilListesi(feNomenler) {
+  let yeniFenomenler=feNomenler;
+  let dizi=[];
+  for (let i=0; i<yeniFenomenler.length;i++){
+    dizi.push(yeniFenomenler[i].profile);
+  }
+  return dizi;
 }
-
+console.log(profilListesi(fenomenler));
+// yeniFenomenler adında bir değişken atadım ve yeni boş bir dizi.
+// i değişkeni bu dizinin tamamını tarasın istedim (i++)
+//taradığın bu dizide oluşan yeni diziyi ittir (push'la)
+//return ile döndür
+//console.log ile gösterdim.
 
 
 /* Görev 5:
@@ -218,10 +229,13 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 5. Ortaya çıkan diziyi döndürün
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
-function fenomenSil(/*kod*/) {
-  /*kod*/
+function fenomenSil(feNomen, indeks) {
+let yeniFenomenler = feNomen;
+yeniFenomenler.splice(indeks, 1);
+return yeniFenomenler;
 }
-
+console.log(fenomenSil(fenomenler, 0));
+// messi gitsin Forza Ronaldo.
 
 
 /* Görev 6:
@@ -244,7 +258,7 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 function fenomenEkle(/*kod*/) {
   /*kod*/
 }
-
+//Anlamadım
 
 /* Görev 7:
 Aşağıdakileri yapmak için enFenomenler'yi kullanın:
@@ -254,9 +268,17 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
+function enFenomenler(feNomen) {
+  const takipcisayisi=100000000;
+  let dizi=[]
+  for(let i=0; i<feNomen.length; i++){
+    if(feNomen[i].followers>takipcisayisi){
+      dizi.push(feNomen[i].profile);
+    }
+  }
+  return dizi;
 }
+console.log(enFenomenler(fenomenler));
 
 
 /* Görev 8:
